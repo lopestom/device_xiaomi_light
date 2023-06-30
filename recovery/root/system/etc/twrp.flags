@@ -4,6 +4,9 @@
 # Modified by lopestom - 06/2023
 #<mnt_point>		<type>		<device>						<mnt_flags and options>
 
+/metadata           ext4      /dev/block/by-name/metadata                      flags=display="metadata";backup=1
+/data               f2fs      /dev/block/by-name/userdata                      flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity
+
 /boot			emmc		/dev/block/by-name/boot		flags=display="Boot";backup=1;flashimg=1;slotselect
 /cache			ext4		/dev/block/by-name/rescue		flags=display="Cache"
 /dtbo			emmc		/dev/block/by-name/dtbo		flags=display="DTBO";backup=1;flashimg=1
