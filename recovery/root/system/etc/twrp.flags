@@ -30,8 +30,8 @@
 
 ## Firmware
 /dtbo               emmc      /dev/block/by-name/dtbo                          flags=display="dtbo";slotselect;backup=1;flashimg=1
-/logo_a               emmc      /dev/block/by-name/logo_a                          flags=display="logo";backup=1;flashimg=1
-/logo_b               emmc      /dev/block/by-name/logo_b                          flags=display="logo";backup=1;flashimg=1
+/logo_a               emmc      /dev/block/by-name/logo_a                          flags=display="logo_a";backup=1;flashimg=1
+/logo_b               emmc      /dev/block/by-name/logo_b                          flags=display="logo_b";backup=1;flashimg=1
 /proinfo            emmc      /dev/block/by-name/proinfo                       flags=display="proinfo"
 /bootloader         emmc      /dev/block/by-name/lk                            flags=display="bootloader";backup=1;flashimg=1
 /bootloader2        emmc      /dev/block/by-name/lk2                           flags=display="bootloader2"
