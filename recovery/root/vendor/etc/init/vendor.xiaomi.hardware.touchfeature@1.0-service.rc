@@ -23,3 +23,11 @@ service touchfeature-hal-1-0 /system/bin/vendor.xiaomi.hardware.touchfeature@1.0
 #    # Set xiaomi touch permissions
 #    chown system system /dev/xiaomi-touch
 #    chmod 0660 /dev/xiaomi-touch
+
+#TP
+#L19 code for L19-72 by gaoxue at 2021/12/24 start
+#    mkdir /data/vendor/focaltech
+#    copy /vendor/firmware/focaltech_mp_fw_tianma.ini /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+#    chown system system /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+#    chmod 0660 /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+#L19 code for L19-72 by gaoxue at 2021/12/24 en
