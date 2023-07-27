@@ -1,7 +1,6 @@
 #
-# Copyright (C) 2022 TeamWin Recovery Project
-#
-# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2023 The Android Open Source Project
+# Copyright (C) 2023 The TWRP Open Source Project
 #
 
 LOCAL_PATH := device/xiaomi/light
@@ -9,65 +8,66 @@ LOCAL_PATH := device/xiaomi/light
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Virtual A/B
-ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+# Api level
+PRODUCT_SHIPPING_API_LEVEL := 31
 
-# Enable project quotas and casefolding for emulated storage without sdcardfs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-# Install gsi keys into ramdisk, to boot a GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
-# Soong Namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
-
-# API
-PRODUCT_SHIPPING_API_LEVEL := 30
+# Platform
+PRODUCT_PLATFORM := mt6833
 
 # A/B
-PRODUCT_PACKAGES += \
-    otapreopt_script
+ENABLE_VIRTUAL_AB := true
 
+# fastboot/d hal
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+
+# A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# Boot Control HAL
+# Boot control HAL
 PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
     android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service
+    android.hardware.boot@1.2-service \
+    android.hardware.boot@1.2-impl.recovery 
 
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-mtkimpl.recovery \
-    libmtk_bsg.recovery
+    bootctrl.mt6833
 
-# Update Engine
 PRODUCT_PACKAGES += \
+    bootctrl.mt6833 \
+    libgptutils \
+    libz \
+    libcutils
+
+PRODUCT_PACKAGES += \
+    otapreopt_script \
+    cppreopts.sh \
     update_engine \
-    update_engine_sideload \
-    update_verifier
+    update_verifier \
+    update_engine_sideload
 
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
-
-# MTK Preloader Utils
+# Health Hal
 PRODUCT_PACKAGES += \
-    mtk_plpath_utils.recovery
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service
 
-# Fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock
+# Otacert
+#PRODUCT_EXTRA_RECOVERY_KEYS += \
+#    $(DEVICE_PATH)/security/miui_releasekey
 
-# Additional Libraries
+#  Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
+    libkeymaster4 \
     libkeymaster41 \
     libpuresoftkeymasterdevice
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so

@@ -1,7 +1,6 @@
 #
-# Copyright (C) 2022 TeamWin Recovery Project
-#
-# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2023 The Android Open Source Project
+# Copyright (C) 2023 The TWRP Open Source Project
 #
 
 PRODUCT_MAKEFILES := \
