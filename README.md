@@ -4,7 +4,7 @@
 This device tree have encrypt/decrypt mode activated for test because boot.img has 40MB. 
 The tester only install `boot-light-A12.img` test file to know if TWRP can start.
 
-[![download](https://img.shields.io/github/downloads/lopestom/device_xiaomi_light/total)](https://github.com/lopestom/Action-Recovery-Builder-CT/releases/download/5676166662/boot.img)
+[![download](https://img.shields.io/github/downloads/lopestom/Action-Recovery-Builder-CT/total)](https://github.com/lopestom/Action-Recovery-Builder-CT/releases/download/5676166662/boot.img)
 
 ### Firmware version: .20230530.V3.03
 20230530.V3.03.zip
