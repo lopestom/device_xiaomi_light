@@ -1,3 +1,4 @@
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/WhoIm) any donation is highly appreciated!
 # TWRP device tree for Xiaomi Poco M4 5G - codenamed "light" - Dimensity 700 - MT6833 - A12
 
 This device tree have encrypt/decrypt mode activated for test because boot.img has 40MB. 
@@ -43,6 +44,7 @@ Specs: https://www.gsmarena.com/doogee_light-11807.php
 ===================================================================== 
 
 ### TWRP Pictures
+[![download](https://img.shields.io/github/downloads/lopestom/device_xiaomi_light/total)](https://github.com/lopestom/Action-Recovery-Builder-CT/releases/download/5676166662/boot.img)
 <details><summary>TWRP Pictures - Click to open</summary>
 <p>
 
