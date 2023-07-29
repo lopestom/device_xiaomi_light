@@ -1,4 +1,4 @@
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/Dees_Troy) any donation is highly appreciated!
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/Ethan_Yonker) any donation is highly appreciated!
 # TWRP device tree for Xiaomi Poco M4 5G - codenamed "light" - Dimensity 700 - MT6833 - A12
 
 This device tree have encrypt/decrypt mode activated for test because boot.img has 40MB. 
