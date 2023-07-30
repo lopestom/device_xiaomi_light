@@ -1,5 +1,8 @@
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate?token=Cxr1xP4Yr_XgV2E5lpC6Oo4qvbqmPiS3TgR6aiMEnQUgxr_nP242Z6zMqzeluThwaikNL-FXe8RnA1pT) to TeamWin so any donation is highly appreciated!
+[![GitHub Release](https://img.shields.io/github/release/lopestom/Action-Recovery-Builder-CT.svg?logo=github)](https://github.com/lopestom/Action-Recovery-Builder-CT/releases) [![GPLv3+](https://img.shields.io/badge/license-GPLv3+-red.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+
 # TWRP device tree for Xiaomi Poco M4 5G - codenamed "light" - Dimensity 700 - MT6833 - A12
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate?token=Cxr1xP4Yr_XgV2E5lpC6Oo4qvbqmPiS3TgR6aiMEnQUgxr_nP242Z6zMqzeluThwaikNL-FXe8RnA1pT) to TeamWin so any donation is highly appreciated!
 
 This device tree have encrypt/decrypt mode activated for test because boot.img has 40MB. 
 The tester only install `boot-light-A12.img` test file to know if TWRP can start.
@@ -71,4 +74,3 @@ export ALLOW_MISSING_DEPENDENCIES=true
 lunch twrp_light-eng
 mka bootimage
 ```
-
