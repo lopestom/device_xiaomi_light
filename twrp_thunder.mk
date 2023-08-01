@@ -15,8 +15,8 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/languages_full.mk)
+#$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
+#$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -32,18 +32,18 @@ $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Device Identifier
-PRODUCT_DEVICE := light
-PRODUCT_NAME := twrp_light
-PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := 22041219G
+PRODUCT_DEVICE := thunder
+PRODUCT_NAME := twrp_thunder
+PRODUCT_BRAND := POCO
+PRODUCT_MODEL := 22041219PG
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-$(PRODUCT_BRAND)
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=light \
-    PRODUCT_NAME=light \
-    PRIVATE_BUILD_DESC="light-user 12 TP1A.220624.014 V14.0.1.0.TLSRUXM release-keys"
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+#    TARGET_DEVICE=thunder \
+#    PRODUCT_NAME=thunder_p_ru \
+#    PRIVATE_BUILD_DESC="light-user 12 TP1A.220624.014 V14.0.1.0.TLSRUXM release-keys"
 
-BUILD_FINGERPRINT := Redmi/light/light:13/TP1A.220624.014/V14.0.1.0.TLSRUXM:user/release-keys
+#BUILD_FINGERPRINT := POCO/thunder_p_ru/thunder:13/TP1A.220624.014/V14.0.1.0.TLSRUXM:user/release-keys
 
