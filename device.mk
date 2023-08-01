@@ -3,7 +3,7 @@
 # Copyright (C) 2023 The TWRP Open Source Project
 #
 
-LOCAL_PATH := device/xiaomi/light
+LOCAL_PATH := device/xiaomi/thunder
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
