@@ -4,7 +4,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_light.mk
+    $(LOCAL_DIR)/twrp_thunder.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_light-eng
+    twrp_thunder-eng
