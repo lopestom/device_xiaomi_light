@@ -4,7 +4,7 @@
 #
 
 # Device Path Identifier
-DEVICE_PATH := device/xiaomi/light
+DEVICE_PATH := device/xiaomi/thunder
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
