@@ -7,7 +7,7 @@
 PRODUCT_RELEASE_NAME := POCO M4 5G
 
 # Inherit from the Device Tree itself.
-$(call inherit-product, device/xiaomi/light/device.mk)
+$(call inherit-product, device/xiaomi/thunder/device.mk)
 
 # Inherit from TWRP-common stuffs, if building TWRP.
 $(call inherit-product, vendor/twrp/config/common.mk)
