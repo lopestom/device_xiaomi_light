@@ -35,7 +35,7 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_OTA_ASSERT_DEVICE := light,thunder
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := light
+TARGET_BOOTLOADER_BOARD_NAME := thunder
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
@@ -63,7 +63,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
-BOARD_KERNEL_CMDLINE += androidboot.force_normal_boot=1
+#BOARD_KERNEL_CMDLINE += androidboot.force_normal_boot=1
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery  # TODO: Used in other device tree. Do we need it?
 # * Don't crash to bootloader, users can access pstore in recovery in order to debug the issue.
 
@@ -171,9 +171,10 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.
 TW_EXCLUDE_TWRPAPP := true
 
 # Crypto
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_INCLUDE_CRYPTO := false
+#TW_INCLUDE_CRYPTO := true
+#TW_INCLUDE_CRYPTO_FBE := true
+#TW_INCLUDE_FBE_METADATA_DECRYPT := true
 
 # Debug-tools
 TWRP_INCLUDE_LOGCAT := true
@@ -212,7 +213,7 @@ TW_DEFAULT_BRIGHTNESS := 1200
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # This device does not support fastboot boot, do *NOT* remove!
-#TW_NO_FASTBOOT_BOOT := true
+TW_NO_FASTBOOT_BOOT := true
 
 # Property Override
 #TW_OVERRIDE_SYSTEM_PROPS := \
