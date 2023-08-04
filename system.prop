@@ -1,15 +1,15 @@
-# USB
-ro.sys.usb.storage.type=mtp
-
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
-
-# TEE
-ro.vendor.mtk_tee_gp_support=1
-ro.vendor.mtk_microtrust_tee_support=1
 
 # Gatekeeper
 ro.hardware.gatekeeper=beanpod
 
-# Kmsetkey
+# Keymaster
 ro.hardware.kmsetkey=beanpod
+
+# TEE
+ro.vendor.mtk_microtrust_tee_support=1
+ro.vendor.mtk_tee_gp_support=1
+
+# USB
+ro.sys.usb.storage.type=mtp
