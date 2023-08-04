@@ -74,3 +74,15 @@ PRODUCT_PACKAGES += \
 #    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
 #    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
 #    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+
+# libion & libxml2
+# VNDK-SP libion from vendor - Memory Allocator functions for ion - Library for interfacing with the ION driver
+# The libxml2 package contains libraries and utilities used for parsing XML files.
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libion \
+    libxml2
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
