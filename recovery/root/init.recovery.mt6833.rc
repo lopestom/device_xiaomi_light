@@ -6,8 +6,9 @@ import /vendor/etc/init/vendor.microtrust.hardware.soter@1.0-service.rc
 on init
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
 
-    # Create a more standard /dev/block layout for our scripts
-    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
+    mkdir /mnt/vendor 0700 root root
+    mkdir /mnt/vendor/persist 0700 root root
+    mount ext4 /dev/block/by-name/persist /mnt/vendor/persist
 
 on fs
     on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
@@ -56,22 +57,20 @@ service keystore /system/bin/keystore /tmp/misc/keystore
     disabled
     seclabel u:r:recovery:s0
 
+service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service
+    interface android.hardware.gatekeeper@1.0::IGatekeeper default
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
 service keymaster-4-1 /system/bin/android.hardware.keymaster@4.1-service.beanpod
     interface android.hardware.keymaster@4.0::IKeymasterDevice default
     interface android.hardware.keymaster@4.1::IKeymasterDevice default
     user root
     group root drmrpc
     disabled
-    seclabel u:r:recovery:s0
-
-service gatekeeperd /system/bin/gatekeeperd /data/misc/gatekeeper
-    seclabel u:r:recovery:s0
-
-service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service
-    interface android.hardware.gatekeeper@1.0::IGatekeeper default 
-    user root
-    group root
-    disabled
+    oneshot
     seclabel u:r:recovery:s0
 
 service keymaster_attestation-1-1 /system/bin/vendor.mediatek.hardware.keymaster_attestation@1.1-service
