@@ -81,30 +81,33 @@ service keymaster_attestation-1-1 /system/bin/vendor.mediatek.hardware.keymaster
     disabled
     seclabel u:r:recovery:s0
 
+on property:vendor.sys.listener.registered=true
+    start gatekeeper-1-0
+    start keymaster-4-1
+
 on property:hwservicemanager.ready=true
-    start keystore2
     start teei_daemon
     start keymaster-4-1
     start gatekeeper-1-0
-    start keymaster_attestation-1-1
+#    start keymaster_attestation-1-1
 
 on property:ro.crypto.state=unsupported
     stop teei_daemon
     stop keymaster-4-1
     stop gatekeeper-1-0
-    stop keymaster_attestation-1-1
+#    stop keymaster_attestation-1-1
 
 on property:ro.crypto.state=unencrypted
     stop teei_daemon
     stop keymaster-4-1
     stop gatekeeper-1-0
-    stop keymaster_attestation-1-1
+#    stop keymaster_attestation-1-1
 
-on property:twrp.decrypt.done=true
+on property:twrp.decrypt.done=true && twrp.all.users.decrypted=true
     stop teei_daemon
     stop keymaster-4-1
     stop gatekeeper-1-0
-    stop keymaster_attestation-1-1
+#    stop keymaster_attestation-1-1
 
 on boot
     start health-hal-2-1
