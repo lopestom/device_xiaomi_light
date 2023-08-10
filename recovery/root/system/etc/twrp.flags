@@ -49,8 +49,8 @@
 /gz2            emmc    /dev/block/by-name/gz2               flags=display="gz2";backup=1
 
 # Modem
-/md1img		    emmc	/dev/block/by-name/md1img           flags=display="Modem";backup=1;flashimg=1;slotselect
-/md1dsp         emmc    /dev/block/by-name/md1dsp            flags=display="md1dsp";backup=1;slotselect
+/md1img		    emmc	/dev/block/by-name/md1img           flags=display="Modem";backup=1;flashimg=1
+/md1dsp         emmc    /dev/block/by-name/md1dsp            flags=display="md1dsp";backup=1
 /md1arm7        emmc    /dev/block/by-name/md1arm7
 /md3img         emmc    /dev/block/by-name/md3img
 
@@ -59,9 +59,9 @@
 /scp2		    emmc	/dev/block/by-name/scp2             flags=display="scp2";backup=1
 
 #VPU
-/cam_vpu1       emmc    /dev/block/by-name/cam_vpu1         flags=display="cam_vpu1";backup=1;slotselect
-/cam_vpu2       emmc    /dev/block/by-name/cam_vpu2         flags=display="cam_vpu2";backup=1;slotselect
-/cam_vpu3       emmc    /dev/block/by-name/cam_vpu3         flags=display="cam_vpu3";backup=1;slotselect
+/cam_vpu1       emmc    /dev/block/by-name/cam_vpu1         flags=display="cam_vpu1";backup=1
+/cam_vpu2       emmc    /dev/block/by-name/cam_vpu2         flags=display="cam_vpu2";backup=1
+/cam_vpu3       emmc    /dev/block/by-name/cam_vpu3         flags=display="cam_vpu3";backup=1
 
 #Mod lopestom about encrypt_decrypt data
 #/oemkeystore		emmc	/dev/block/by-name/oemkeystore
