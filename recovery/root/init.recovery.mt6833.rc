@@ -8,6 +8,7 @@ on init
     mount ext4 /dev/block/by-name/persist /mnt/vendor/persist
 
 on fs
+ on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
 on post-fs
