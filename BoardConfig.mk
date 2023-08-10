@@ -128,7 +128,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # fstab
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/fstab/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # Encryption
 # Hack: prevent anti rollback
